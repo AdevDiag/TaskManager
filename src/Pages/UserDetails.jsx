@@ -37,14 +37,17 @@ const UserDetails = () => {
                 </tr>
             </thead>
             <tbody>
-                {user.tasks && user.tasks.map((task)=>{
+                {user.tasks &&user.tasks.length >0 ? (user.tasks.map((task)=>{
                     return <tr key={task.id}>
                     <td className='border py-1 px2 text-center'>{task.id}</td>
                     <td className='border py-1 px2 text-center'>{task.title}</td>
                     <td className={`border py-1 px2 text-center text-white ${task.status==='pending'?'bg-red-500':task.status==='in-progress'?'bg-blue-500':'bg-green-500'}`}>{task.status}</td>
 
                     </tr>
-                })}
+                })):
+                <tr>
+                    <td className='border py-1 px2 text-center' colSpan={3}>No tasks For this User</td>    
+                </tr>}
             </tbody>
         </table>
         </>

@@ -236,8 +236,12 @@ const userSlice=createSlice({
     name:'users',
     initialState,
     reducers: {
-        
+        addUser:(state,action)=>{
+          const {username,email,level}=action.payload;
+          let newUser={id: state.users.length+1,username,email,level,tasks: [],score: 0};
+          state.users.push(newUser);
+        }
     }
 });
-export const {}=userSlice.actions;
+export const {addUser}=userSlice.actions;
 export default userSlice.reducer;
