@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import {  useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
 const UserDetails = () => {
     const {id}=useParams();
@@ -26,7 +26,7 @@ const UserDetails = () => {
         <>
         <div className=' w-[60%] flex justify-around items-center'>
             <h2 className='text-xl font-bold mx-50 my-10 '>Tasks</h2>
-            <button className='border px-2 py-1 rounded hover:text-[#EAE0CC] hover:bg-black transition-all duration-150 delay-75 ease-out' >Add Task</button>
+            <Link to={`/users/${id}/addTask`} className='border px-2 py-1 rounded hover:text-[#EAE0CC] hover:bg-black transition-all duration-150 delay-75 ease-out' >Add Task</Link>
         </div>
         <table className='w-[50%] ml-40 border '>
             <thead >

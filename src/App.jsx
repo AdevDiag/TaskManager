@@ -10,6 +10,7 @@ import UserDetails from './Pages/UserDetails'
 import Contact from './Pages/Contact'
 import About from './Pages/About'
 import LinkStyle from './Components/LinkStyle'
+import AddTask from './Pages/AddTask'
 const App = () => {
   return (
     <div className='w-full h-screen grid grid-cols-5'>
@@ -37,6 +38,7 @@ const App = () => {
           <Route path='/addUser' element={<AddUser/>}></Route>
           <Route path='/modifyUser' element={<ModifyUser/>}></Route>
           <Route path='/users/:id' element={<UserDetails/>}></Route>
+          <Route path='/users/:id/addTask' element={<AddTask/>}/>
           <Route path='/contact' element={<Contact/>}></Route>
           <Route path='/about' element={<About/>}></Route>
 

@@ -240,8 +240,15 @@ const userSlice=createSlice({
           const {username,email,level}=action.payload;
           let newUser={id: state.users.length+1,username,email,level,tasks: [],score: 0};
           state.users.push(newUser);
+        },
+        addTask:(state,action)=>{
+          const {userId,title,status}=action.payload;
+          const user=state.users.find((user)=>user.id===parseInt(userId));
+          if(!user) return 
+          const taskId=100 + Math.floor(Math.random() * 100);
+          user.tasks.push({id:taskId,title,status});
         }
     }
 });
-export const {addUser}=userSlice.actions;
+export const {addUser,addTask}=userSlice.actions;
 export default userSlice.reducer;
